@@ -15,3 +15,31 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
+.landing-page {
+    text-align: center;
+    padding: 20px;
+    background-image: url('/public/LandingPageBG.jpg');
+    background-size: cover; /*scales the image to cover the whole area */
+    background-position: center; /*centers the image */
+    background-repeat: no-repeat; /*prevents the image from repeating */
+    height: 100vh; /*background cover the full viewport height */
+    color: #333; /*text is readable */
+}
+
+.landing-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /*white overlay with 80% opacity */
+    z-index: 1;
+}
+
+.landing-page h1,
+.landing-page p,
+.auth-buttons {
+    position: relative;
+    z-index: 2; /* text is above the overlay */
+}
