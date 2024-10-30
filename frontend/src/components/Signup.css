@@ -1,0 +1,28 @@
+/* Signup.css */
+.signup-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 300px;
+}
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-container label {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.signup-container input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.signup-container button {
+    padding: 10px;
+    cursor: pointer;
+}
+
