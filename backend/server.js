@@ -1,48 +1,44 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb+srv://RickLeinecker:COP4331Rocks@cluster0-4pisv.mongodb.net/COP4331?retryWrites=true&w=majority';
-//CHANGE ABOVE
-const client = new MongoClient(url);
-client.connect();
-
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 5000;
+require('dotenv').config();
+const url = process.env.MONGODB_URL;
+const MongoClient = require('mongodb').MongoClient;
+const client = new MongoClient(url);
+client.connect();
 
-app.get('/', (req, res) => res.send('API is running'));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PATCH, DELETE, OPTIONS'
+  );
+  next();
+});
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.post('/api/login', async (req, res, next) => {
+  const { Login, Password } = req.body;
+  const db = client.db();
+  const results = await db.collection('Users').find({ login: Login, password: Password }).toArray();
 
-app.post('/api/login', async (req, res, next) => 
-    {
-      // incoming: login, password
-      // outgoing: id, firstName, lastName, error
-        
-     var error = '';
-    
-      const { login, password } = req.body;
-    
-      const db = client.db();
-      const results = await db.collection('Users').find({Login:login,Password:password}).toArray();
-    
-      var id = -1;
-      var fn = '';
-      var ln = '';
-    
-      if( results.length > 0 )
-      {
-        id = results[0]._id;
-        fn = results[0].name;
-        ln = results[0].email;
-      }
-    
-      var ret = { id:id, name:n, email:em, error:''};
-      res.status(200).tsxon(ret);
-    }
-);
+  let fn = '';
+  let ln = '';
+  if (results.length > 0) {
+    fn = results[0].first_name;
+    ln = results[0].last_name;
+  }
+
+  res.status(200).json({ first_name: fn, last_name: ln, error: '' });
+});
+
+app.listen(5000); // start Node + Express server on port 5000
     

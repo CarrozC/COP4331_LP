@@ -18,39 +18,42 @@ const Signup: React.FC = () => {
     };
 
     return (
-        <div className="signup-container">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSignup}>
-                <label>
-                    Email:
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Repeat Password:
-                    <input
-                        type="password"
-                        value={repeatPassword}
-                        onChange={(e) => setRepeatPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <button type="submit">Sign Up</button>
-            </form>
+        <div className="signup">
+            <div className="signup-container">
+                <h2>Sign Up</h2>
+                <form onSubmit={handleSignup}>
+                    <label>
+                        Email:
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Password:
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Repeat Password:
+                        <input
+                            type="password"
+                            value={repeatPassword}
+                            onChange={(e) => setRepeatPassword(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
         </div>
+       
     );
 };
 
