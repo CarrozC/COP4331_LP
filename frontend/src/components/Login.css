@@ -3,7 +3,7 @@
     position: relative;
     text-align: center;
     padding: 20px;
-    background-image: url('/LandingPageBG.jpg'); /* Assuming image is in the public directory */
+    background-image: url('LandingPageBG.jpg'); /* Assuming image is in the public directory */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -19,7 +19,7 @@ button {
     position: relative;
     text-align: center;
     padding: 20px;
-    background-image: url('/LandingPageBG.jpg');
+    background-image: url('LandingPageBG.jpg');
     background-size: cover; /*scales the image to cover the whole area */
     background-position: center; /*centers the image */
     background-repeat: no-repeat; /*prevents the image from repeating */
