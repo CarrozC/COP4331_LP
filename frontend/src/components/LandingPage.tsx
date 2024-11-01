@@ -9,7 +9,7 @@ const LandingPage: React.FC = () => {
       <h1>Welcome to the App!</h1>
       <p>Your go-to app for recipe inspiration based on ingredients you have.</p>
       <div className="auth-buttons">
-        <button onClick={() => alert('Navigate to Login')}>Login</button>
+        <button onClick={() => navigate('/login')}>Login</button>
         <button onClick={() => navigate('/signup')}>Sign Up</button>
       </div>
     </div>
