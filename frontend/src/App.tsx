@@ -4,7 +4,8 @@ import LandingPage from './components/LandingPage'; // Import the new LandingPag
 import Signup from './components/Signup'; //Imports signup
 import Login from './components/Login';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; //imports routing
-
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 
 function App() {
   return (
