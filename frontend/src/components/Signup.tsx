@@ -6,6 +6,8 @@ const Signup: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [firstName, setFirstName] = useState(''); 
+    const [lastName, setLastName] = useState(''); 
 
     const handleSignup = (e: React.FormEvent) => {
         e.preventDefault();
@@ -22,6 +24,24 @@ const Signup: React.FC = () => {
             <div className="signup-container">
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSignup}>
+                    <label>
+                        First Name: 
+                        <input
+                            type="text"
+                            value= {firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required>
+                        </input>
+                    </label>
+                    <label>
+                        Last Name: 
+                        <input
+                            type="text"
+                            value= {lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required>
+                        </input>
+                    </label>
                     <label>
                         Email:
                         <input
