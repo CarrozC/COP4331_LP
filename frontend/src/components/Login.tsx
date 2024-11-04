@@ -14,6 +14,7 @@ const Login: React.FC = () => {
 
     return (
         <div className="login">
+            <div className='overlay'></div>
             <div className="login-container">
                 <h2>Login</h2>
                 <form onSubmit={handleLogin}>
