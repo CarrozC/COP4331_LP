@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-require('dotenv').config();
+require('dotenv').config({ path: 'config.env' });
 const url = process.env.MONGODB_URL;
 const MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(url);
@@ -19,11 +19,11 @@ app.post('/api/login', async (req, res, next) =>
     
    var error = '';
   
-    const { login, password } = req.body;
+    const { Username, Password } = req.body;
   
     const db = client.db('POOSD-Large-Project');
-    const results = await db.collection('Users').find({login:login,password:password}).toArray();
-  
+    const results = await db.collection('Users').find({username:Username,password:Password}).toArray();
+    
     var id = -1;
     var fn = '';
     var ln = '';
