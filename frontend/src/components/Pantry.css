@@ -1,0 +1,203 @@
+/* Base Pantry Styles */
+.pantry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('../assets/images/LandingPageBG.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.pantry::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* White overlay */
+    z-index: 1; /* Ensure it stays below the container */
+}
+
+.pantry-container {
+    position: relative;
+    background-color: white; /* White box */
+    padding: 20px;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Limit max width */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 2; /* Ensure it's above the overlay */
+    text-align: center;
+}
+
+/* Header */
+.pantry-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Pantry List */
+.pantry-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Add spacing between items */
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.pantry-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pantry-list li button {
+    margin-left: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.pantry-list li button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+/* Controls for Adding Items */
+.pantry-controls {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pantry-controls input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    max-width: 250px;
+    width: 100%;
+}
+
+.pantry-controls input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.pantry-controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.pantry-controls button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Recipes Section */
+.recipes-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.recipes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between recipe cards */
+    list-style: none;
+    padding: 0;
+}
+
+.recipes-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipes-list li:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipes-list h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.recipes-list img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 200px;
+    width: 100%; /* Uniform sizing */
+}
+
+.recipes-list button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.recipes-list button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Error/Success Messages */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+    z-index: 10; /* Ensure visibility above overlay */
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+    z-index: 10; /* Ensure visibility above overlay */
+}

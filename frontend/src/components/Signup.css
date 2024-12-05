@@ -4,7 +4,9 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('/public/LandingPageBG.jpg');
+
+    background-image: url('../assets/images/LandingPageBG.jpg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,3 +89,14 @@
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow for focus */
 }
 
+/* Success/Error message styling */
+.signup-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: green; /* Success messages */
+}
+
+.signup-message.error {
+    color: red; /* Error messages */
+}

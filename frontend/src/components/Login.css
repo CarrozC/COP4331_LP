@@ -4,7 +4,9 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('/public/LandingPageBG.jpg');
+
+    background-image: url('../assets/images/LandingPageBG.jpg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -83,4 +85,34 @@
     border-color: #4CAF50;
     outline: none;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow for focus */
+}
+.forgot-password-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forgot-password-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+
+.signup-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
 }

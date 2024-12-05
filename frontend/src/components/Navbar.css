@@ -1,0 +1,65 @@
+/* Navbar.css */
+.navbar {
+    position: relative;
+    z-index: 10;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 10;
+    transition: all 0.3s ease;
+    padding: 20px 10px;
+    padding-top: 60px;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.side-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.side-menu ul li .icon {
+    margin-right: 10px;
+}

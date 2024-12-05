@@ -1,46 +1,97 @@
+/* Reset any default padding/margin to avoid overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the video covers the entire background */
+  z-index: 2; /* Sends the video behind other elements */
+}
+
+
 .landing-page {
+  position: relative;
+  text-align: center;
+
+  background-image: url('../assets/images/LandingPageBG.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+}
+
+.landing-page-container {
+  position: relative;
   text-align: center;
   padding: 20px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.5); /* Light background for readability */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2; 
+}
+
+.app-title {
+  font-size: 4rem;
+  color: #2d6a4f; /* Rich green color for vibrancy */
+  font-weight: bold;
+  z-index: 2;
+  margin: 0;
+  text-shadow: 2px 2px #b7e4c7; /* Soft shadow for a pop effect */
+}
+
+.app-tagline {
+  font-size: 1.5rem;
+  color: #1b4332; /* Darker green for contrast */
+  z-index: 2;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .auth-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  z-index: 2;
 }
 
 button {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-}
-.landing-page {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    background-image: url('/public/LandingPageBG.jpg');
-    background-size: cover; /*scales the image to cover the whole area */
-    background-position: center; /*centers the image */
-    background-repeat: no-repeat; /*prevents the image from repeating */
-    height: 100vh; /*background cover the full viewport height */
-    color: #333; /*text is readable */
+  background-color: #40916c; /* Green button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.landing-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7); /*white overlay with 80% opacity */
-    z-index: 1;
-}
-
-.landing-page h1,
-.landing-page p,
-.auth-buttons {
-    position: relative;
-    z-index: 2; /* text is above the overlay */
+button:hover {
+  background-color: #2d6a4f;
+  transform: scale(1.05);
 }

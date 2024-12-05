@@ -1,0 +1,92 @@
+/* Overlay: Covers the entire screen and dims the background */
+.popup-overlay {
+    position: fixed; /* Fixed to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex; /* Flexbox to center the popup */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to ensure it is on top of all other elements */
+  }
+  
+  /* Popup content: The white box that contains the recipe details */
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative; /* Needed for the close button positioning */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+    z-index: 1100; /* Slightly higher than the overlay for layering */
+    overflow-y: auto; /* Allows scrolling inside the popup if content overflows */
+    max-height: 90%; /* Prevents the popup from exceeding the viewport height */
+  }
+  
+  /* Close button: Positioned at the top-right corner of the popup */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Image styling: Ensures the image fits properly inside the popup */
+  .popup-content img {
+    max-width: 100%; /* Scales the image to fit the container */
+    max-height: 300px; /* Prevents the image from becoming too tall */
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-bottom: 15px; /* Space between the image and the text */
+  }
+  
+  /* Headings */
+  .popup-content h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Paragraphs */
+  .popup-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  /* List for ingredients */
+  .popup-content ul {
+    list-style-type: disc; /* Standard bullet points */
+    list-style-position: inside; /* Align bullets with text */
+    padding-left: 0; /* Removes default padding */
+    text-align: left; /* Aligns text to the left */
+    margin: 10px 0;
+  }
+  
+  /* Individual list items */
+  .popup-content li {
+    margin: 5px 0; /* Adds space between list items */
+    font-size: 1rem;
+  }
+  
+  /* "View Full Recipe" link */
+  .popup-content a {
+    text-decoration: underline;
+    color: blue;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  
+  /* Prevent scrolling of the body when popup is open */
+  .body-no-scroll {
+    overflow: hidden;
+  }
+  

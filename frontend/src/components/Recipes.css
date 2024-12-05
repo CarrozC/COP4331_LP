@@ -1,0 +1,249 @@
+/* Overall container */
+.recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures full height */
+    position: relative;
+    background-image: url('../assets/images/LandingPageBG.jpg'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay for the Recipes page */
+.recipes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Corrected opacity */
+    z-index: 1;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10; /* Above overlay */
+    background: none; /* Removes white overhang */
+    padding: 5px;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+/* Sliding Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 9;
+    transition: all 0.3s ease;
+    padding: 20px 10px;
+}
+
+.side-menu.open {
+    left: 0; /* Slide-in effect */
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 50px 0 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.side-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.side-menu ul li .icon {
+    margin-right: 10px;
+}
+
+/* Recipes Container */
+.recipes-container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+}
+
+/* Search header */
+.recipes-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Search input field */
+.recipes-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.recipes-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Hover animation for the button */
+.recipes-container button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Error message */
+.recipes-container p.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Recipe results container */
+.recipe-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual recipe card */
+.recipe-card {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Recipe link styling */
+.recipe-card a {
+    text-decoration: none;
+    color: #4CAF50; /* Match button color */
+    font-weight: bold;
+}
+
+.recipe-card a:hover {
+    text-decoration: underline;
+}
+
+/* Load more button */
+.load-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.load-more:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.star-button {
+    font-size: 24px;
+    color: gray;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .star-button.favorited {
+    color: gold;
+  }
+  
+  .star-button:focus {
+    outline: none;
+  }
+
+.email-verified-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px; /* Space between checkmark and name */
+}
+
+.email-verified-check svg {
+  vertical-align: middle;
+  margin-right: 8px; /* Space between checkmark and name text */
+}
+
+.profile-container {
+  position: relative; /* Ensures the green checkmark is placed correctly */
+  padding: 20px;
+}
+
+.email-verified-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+}
